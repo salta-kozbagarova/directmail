@@ -1,0 +1,2 @@
+# directmail
+Django project
