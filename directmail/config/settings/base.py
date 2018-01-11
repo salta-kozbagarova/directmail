@@ -111,7 +111,11 @@ MANAGERS = ADMINS
 # Uses django-environ to accept uri format
 # See: https://django-environ.readthedocs.io/en/latest/#supported-types
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres://localhost/directmail'),
+    #'default': env.db('DATABASE_URL', default='postgres://localhost/directmail'),
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'database',
+    }
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
